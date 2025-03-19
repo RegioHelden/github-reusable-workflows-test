@@ -25,4 +25,4 @@ jobs:
       - lint
     uses: RegioHelden/github-reusable-workflows/.github/workflows/tag-release.yaml@main
     secrets:
-      commit-key: "${{ secrets.COMMIT_KEY }}"
+      personal-access-token: "${{ secrets.COMMIT_KEY }}"
