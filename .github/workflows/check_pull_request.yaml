@@ -1,0 +1,17 @@
+---
+
+name: Check pull request
+
+on:
+  # when labels are added or removed
+  pull_request:
+    types: [opened, synchronize, reopened, labeled, unlabeled]
+
+jobs:
+  # make sure the pull request matches our guidelines like having at least one label assigned
+  # see https://github.com/RegioHelden/github-reusable-workflows/blob/main/.github/workflows/check-pull-request.yaml
+  check-pull-request:
+    name: Check pull request
+    needs:
+      - lint
+    uses: RegioHelden/github-reusable-workflows/.github/workflows/check-pull-request.yaml@main

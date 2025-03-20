@@ -1,16 +1,9 @@
 ---
 
-name: Check pull request
+name: Check pushed code
 
 on:
   push:
-    # on all branches except for main
-    branches:
-      - '**'
-      - '!main'
-  # when labels are added or removed
-  pull_request:
-    types: [opened, synchronize, reopened, labeled, unlabeled]
 
 jobs:
   # lint code for errors
@@ -19,13 +12,16 @@ jobs:
     name: Lint
     uses: RegioHelden/github-reusable-workflows/.github/workflows/python-ruff.yaml@main
     with:
-      ruff-version: "0.9.9"
+      ruff-version: "0.11.0"
       python-version: "3.12"
 
-  # make sure the pull request matches our guidelines like having at least one label assigned
-  # see https://github.com/RegioHelden/github-reusable-workflows/blob/main/.github/workflows/check-pull-request.yaml
-  check-pull-request:
-    name: Check pull request
+  # create a new git tag when a version update was merged to main branch
+  # see https://github.com/RegioHelden/github-reusable-workflows/blob/main/.github/workflows/tag-release.yaml
+  tag-release:
+    name: Create tag
     needs:
       - lint
-    uses: RegioHelden/github-reusable-workflows/.github/workflows/check-pull-request.yaml@main
+    if: github.ref == 'refs/heads/main'
+    uses: RegioHelden/github-reusable-workflows/.github/workflows/tag-release.yaml@main
+    secrets:
+      personal-access-token: "${{ secrets.COMMIT_KEY }}"
