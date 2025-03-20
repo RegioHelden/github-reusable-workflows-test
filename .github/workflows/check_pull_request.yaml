@@ -3,9 +3,9 @@
 name: Check pull request
 
 on:
-  # when labels are added or removed
+  # when labels are added/removed or draft status gets changed to ready for review
   pull_request:
-    types: [opened, synchronize, reopened, labeled, unlabeled]
+    types: [opened, synchronize, reopened, labeled, unlabeled, ready_for_review]
 
 jobs:
   # make sure the pull request matches our guidelines like having at least one label assigned

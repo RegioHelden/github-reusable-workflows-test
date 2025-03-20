@@ -3,7 +3,11 @@
 name: Check pushed code
 
 on:
+  # code pushed
   push:
+  # when draft state is removed (needed as automatically created PRs are not triggering this action)
+  pull_request:
+    types: [ready_for_review]
 
 jobs:
   # lint code for errors
