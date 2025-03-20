@@ -11,3 +11,5 @@ jobs:
   open-release-pr:
     name: Open release PR
     uses: RegioHelden/github-reusable-workflows/.github/workflows/release-pull-request.yaml@main
+    secrets:
+      personal-access-token: "${{ secrets.COMMIT_KEY }}"
