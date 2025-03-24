@@ -1,0 +1,15 @@
+---
+
+name: Build and publish
+
+on:
+  push:
+    tags:        
+      - '**'   
+
+jobs:
+  # build package, make release on github and upload to pypi when a new tag is pushed
+  # see https://github.com/RegioHelden/github-reusable-workflows/blob/main/.github/workflows/python-build-and-publish.yaml
+  build-and-release:
+    name: Build and publish
+    uses: regiohelden/github-reusable-workflows/.github/workflows/python-build-and-publish.yaml@main
