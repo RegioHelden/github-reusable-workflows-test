@@ -1,10 +1,12 @@
 ---
 
-name: Check pushed code
+name: Check code
 
 on:
-  # code pushed
+  # code pushed to pull request branch
   push:
+    branches-ignore:
+      - main
   # when draft state is removed (needed as automatically created PRs are not triggering this action)
   pull_request:
     types: [ready_for_review]
@@ -18,14 +20,3 @@ jobs:
     with:
       ruff-version: "0.11.0"
       python-version: "3.12"
-
-  # create a new git tag when a version update was merged to main branch
-  # see https://github.com/RegioHelden/github-reusable-workflows/blob/main/.github/workflows/tag-release.yaml
-  tag-release:
-    name: Create tag
-    needs:
-      - lint
-    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-    uses: RegioHelden/github-reusable-workflows/.github/workflows/tag-release.yaml@main
-    secrets:
-      personal-access-token: "${{ secrets.COMMIT_KEY }}"
