@@ -1,12 +1,16 @@
 # Changelog
 
-## [v0.2.0](https://github.com/RegioHelden/github-reusable-workflows-test/tree/v0.2.0) (2025-03-20)
+## [v0.2.0](https://github.com/RegioHelden/github-reusable-workflows-test/tree/v0.2.0) (2025-03-24)
 
 [Full Changelog](https://github.com/RegioHelden/github-reusable-workflows-test/compare/v0.1.0...v0.2.0)
 
 **Implemented enhancements:**
 
 - A random change [\#2](https://github.com/RegioHelden/github-reusable-workflows-test/pull/2) (@lociii)
+
+**Fixed bugs:**
+
+- Feature 8 [\#7](https://github.com/RegioHelden/github-reusable-workflows-test/pull/7) (@lociii)
 
 ## [v0.1.0](https://github.com/RegioHelden/github-reusable-workflows-test/tree/v0.1.0) (2025-03-20)
 
