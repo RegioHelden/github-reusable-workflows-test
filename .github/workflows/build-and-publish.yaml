@@ -10,6 +10,8 @@ on:
 jobs:
   # required as reusable workflows cannot access the environment of the calling workflow
   # and environment variables cannot be directly used as secrets when calling the reusable workflow
+  name: Set variables
+  runs-on: ubuntu-latest
   set-variables:
     steps:
       - name: Set URL
