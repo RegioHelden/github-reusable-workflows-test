@@ -1,5 +1,13 @@
 # Changelog
 
+## [v0.4.1](https://github.com/RegioHelden/loci-pypi-test/tree/v0.4.1) (2025-03-26)
+
+[Full Changelog](https://github.com/RegioHelden/loci-pypi-test/compare/v0.4.0...v0.4.1)
+
+**Fixed bugs:**
+
+- Forward environment variables to publish action [\#21](https://github.com/RegioHelden/loci-pypi-test/pull/21) (@lociii)
+
 ## [v0.4.0](https://github.com/RegioHelden/loci-pypi-test/tree/v0.4.0) (2025-03-26)
 
 [Full Changelog](https://github.com/RegioHelden/loci-pypi-test/compare/v0.3.0...v0.4.0)
