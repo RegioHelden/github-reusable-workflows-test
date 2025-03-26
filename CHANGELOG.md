@@ -4,6 +4,10 @@
 
 [Full Changelog](https://github.com/RegioHelden/loci-pypi-test/compare/v0.3.0...v0.3.0)
 
+**Implemented enhancements:**
+
+- Feature 10 [\#18](https://github.com/RegioHelden/loci-pypi-test/pull/18) (@lociii)
+
 **Fixed bugs:**
 
 - Only publish to testpypi but use default to resolve [\#16](https://github.com/RegioHelden/loci-pypi-test/pull/16) (@lociii)
