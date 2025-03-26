@@ -1,5 +1,5 @@
 [project]
-name = "github-workflow-test"
+name = "loci-pypi-test"
 version = "0.2.1"
 license = "MIT"
 requires-python = ">=3.9"
@@ -32,11 +32,11 @@ publish-url = "https://test.pypi.org/legacy/"
 default = true
 
 [project.urls]
-Homepage = "https://github.com/RegioHelden/github-workflow-test"
-Documentation = "https://github.com/RegioHelden/github-workflow-test/blob/main/README.md"
-Repository = "https://github.com/RegioHelden/github-workflow-test.git"
-Issues = "https://github.com/RegioHelden/github-workflow-test/issues"
-Changelog = "https://github.com/RegioHelden/github-workflow-test/blob/main/CHANGELOG.md"
+Homepage = "https://github.com/RegioHelden/loci-pypi-test"
+Documentation = "https://github.com/RegioHelden/loci-pypi-test/blob/main/README.md"
+Repository = "https://github.com/RegioHelden/loci-pypi-test.git"
+Issues = "https://github.com/RegioHelden/loci-pypi-test/issues"
+Changelog = "https://github.com/RegioHelden/loci-pypi-test/blob/main/CHANGELOG.md"
 
 [build-system]
 requires = ["hatchling"]
