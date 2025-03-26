@@ -8,10 +8,24 @@ on:
       - '**'   
 
 jobs:
+  # required as reusable workflows cannot access the environment of the calling workflow
+  # and environment variables cannot be directly used as secrets when calling the reusable workflow
+  set-variables:
+    steps:
+      - name: Set URL
+        id: set-url
+        run: echo "ACTIONS_ID_TOKEN_REQUEST_URL=$ACTIONS_ID_TOKEN_REQUEST_URL" >> $GITHUB_OUTPUT
+      - name: Set token
+        id: set-token
+        run: echo "ACTIONS_ID_TOKEN_REQUEST_TOKEN=$ACTIONS_ID_TOKEN_REQUEST_TOKEN" >> $GITHUB_OUTPUT
+
   # build package, make release on github and upload to pypi when a new tag is pushed
   # see https://github.com/RegioHelden/github-reusable-workflows/blob/main/.github/workflows/python-build-and-publish.yaml
   build-and-release:
     name: Build and publish
     uses: regiohelden/github-reusable-workflows/.github/workflows/python-build-and-publish.yaml@main
+    secrets:
+      actions-id-token-request-url: ${{ steps.set-url.outputs.ACTIONS_ID_TOKEN_REQUEST_URL }}
+      actions-id-token-request-token: ${{ steps.set-token.outputs.ACTIONS_ID_TOKEN_REQUEST_TOKEN }}
     with:
       deploy-index: testpypi
