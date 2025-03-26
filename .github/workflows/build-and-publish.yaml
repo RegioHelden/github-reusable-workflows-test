@@ -13,3 +13,5 @@ jobs:
   build-and-release:
     name: Build and publish
     uses: regiohelden/github-reusable-workflows/.github/workflows/python-build-and-publish.yaml@main
+    with:
+      deploy-index: testpypi
