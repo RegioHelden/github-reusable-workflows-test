@@ -27,3 +27,5 @@ jobs:
     secrets:
       actions-id-token-request-url: ${{ steps.set-url.outputs.ACTIONS_ID_TOKEN_REQUEST_URL }}
       actions-id-token-request-token: ${{ steps.set-token.outputs.ACTIONS_ID_TOKEN_REQUEST_TOKEN }}
+    with:
+      deploy-index: testpypi

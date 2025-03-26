@@ -1,6 +1,6 @@
 [project]
 name = "loci-pypi-test"
-version = "0.3.0"
+version = "0.4.0"
 license = "MIT"
 requires-python = ">=3.9"
 description = "Just a test package to validate our GitHub actions"
@@ -29,7 +29,7 @@ dependencies = []
 name = "testpypi"
 url = "https://test.pypi.org/simple/"
 publish-url = "https://test.pypi.org/legacy/"
-default = true
+explicit = true
 
 [project.urls]
 Homepage = "https://github.com/RegioHelden/loci-pypi-test"
