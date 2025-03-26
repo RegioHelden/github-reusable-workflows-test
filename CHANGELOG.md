@@ -2,6 +2,14 @@
 
 ## [v0.3.0](https://github.com/RegioHelden/loci-pypi-test/tree/v0.3.0) (2025-03-26)
 
+[Full Changelog](https://github.com/RegioHelden/loci-pypi-test/compare/v0.3.0...v0.3.0)
+
+**Fixed bugs:**
+
+- Only publish to testpypi but use default to resolve [\#16](https://github.com/RegioHelden/loci-pypi-test/pull/16) (@lociii)
+
+## [v0.3.0](https://github.com/RegioHelden/loci-pypi-test/tree/v0.3.0) (2025-03-26)
+
 [Full Changelog](https://github.com/RegioHelden/loci-pypi-test/compare/v0.2.1...v0.3.0)
 
 **Implemented enhancements:**
