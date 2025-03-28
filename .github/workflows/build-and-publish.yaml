@@ -7,27 +7,52 @@ on:
     tags:        
       - '**'   
 
-jobs:
-  # required as reusable workflows cannot access the environment of the calling workflow
-  # and environment variables cannot be directly used as secrets when calling the reusable workflow
-  set-variables:
-    name: Set variables
-    runs-on: ubuntu-latest
-    steps:
-      - name: Set URL
-        id: set-url
-        run: echo "ACTIONS_ID_TOKEN_REQUEST_URL=$ACTIONS_ID_TOKEN_REQUEST_URL" >> $GITHUB_OUTPUT
-      - name: Set token
-        id: set-token
-        run: echo "ACTIONS_ID_TOKEN_REQUEST_TOKEN=$ACTIONS_ID_TOKEN_REQUEST_TOKEN" >> $GITHUB_OUTPUT
+env:
+  DEPLOY_INDEX: testpypi
 
+jobs:
   # build package, make release on github and upload to pypi when a new tag is pushed
   # see https://github.com/RegioHelden/github-reusable-workflows/blob/main/.github/workflows/python-build-and-publish.yaml
   build-and-release:
     name: Build and publish
     uses: regiohelden/github-reusable-workflows/.github/workflows/python-build-and-publish.yaml@main
-    secrets:
-      actions-id-token-request-url: ${{ steps.set-url.outputs.ACTIONS_ID_TOKEN_REQUEST_URL }}
-      actions-id-token-request-token: ${{ steps.set-token.outputs.ACTIONS_ID_TOKEN_REQUEST_TOKEN }}
+    permissions:
+      id-token: write
     with:
-      deploy-index: testpypi
+      deploy-index: ${{ env.DEPLOY_INDEX }}
+
+  publish-pypi:
+    name: Publish on PyPI
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+    needs:
+      - publish-github
+    steps:
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ inputs.python-version }}
+
+      # required so that uv can read index information from pyproject.toml
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Install the latest version of uv
+        uses: astral-sh/setup-uv@v5
+
+      - name: Download the distribution packages
+        uses: actions/download-artifact@v4
+        with:
+          name: python-package-distributions
+          path: dist/
+
+      - name: Publish to alternative index
+        if: ${{ env.DEPLOY_INDEX != '' && env.DEPLOY_INDEX != 'pypi' }}
+        run: uv publish --trusted-publishing always --index ${{ env.DEPLOY_INDEX }}
+
+      - name: Publish
+        if: ${{ env.DEPLOY_INDEX == '' || env.DEPLOY_INDEX == 'pypi' }}
+        run: uv publish --trusted-publishing always
