@@ -1,5 +1,13 @@
 # Changelog
 
+## [v0.6.0](https://github.com/RegioHelden/loci-pypi-test/tree/v0.6.0) (2025-03-28)
+
+[Full Changelog](https://github.com/RegioHelden/loci-pypi-test/compare/v0.5.0...v0.6.0)
+
+**Implemented enhancements:**
+
+- Reactivate publish [\#34](https://github.com/RegioHelden/loci-pypi-test/pull/34) (@lociii)
+
 ## [v0.5.0](https://github.com/RegioHelden/loci-pypi-test/tree/v0.5.0) (2025-03-28)
 
 [Full Changelog](https://github.com/RegioHelden/loci-pypi-test/compare/v0.4.1...v0.5.0)
