@@ -10,6 +10,9 @@ jobs:
   # see https://github.com/RegioHelden/github-reusable-workflows/blob/main/.github/workflows/release-pull-request.yaml
   open-release-pr:
     name: Open release PR
+    permissions:
+      contents: write
+      pull-requests: write
     uses: RegioHelden/github-reusable-workflows/.github/workflows/release-pull-request.yaml@main
     secrets:
       personal-access-token: "${{ secrets.COMMIT_KEY }}"
