@@ -23,7 +23,7 @@ jobs:
       contents: read
       id-token: write
     needs:
-      - publish-github
+      - build-and-release
     steps:
       - name: Set up Python
         uses: actions/setup-python@v5
