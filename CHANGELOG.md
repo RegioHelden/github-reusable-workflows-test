@@ -4,9 +4,9 @@
 
 [Full Changelog](https://github.com/RegioHelden/loci-pypi-test/compare/v0.5.0...v0.5.0)
 
-**Implemented enhancements:**
+**Fixed bugs:**
 
-- Deploy to test pypi only [\#27](https://github.com/RegioHelden/loci-pypi-test/pull/27) (@lociii)
+- Set proper dependency [\#29](https://github.com/RegioHelden/loci-pypi-test/pull/29) (@lociii)
 
 ## [v0.5.0](https://github.com/RegioHelden/loci-pypi-test/tree/v0.5.0) (2025-03-28)
 
@@ -14,6 +14,7 @@
 
 **Implemented enhancements:**
 
+- Deploy to test pypi only [\#27](https://github.com/RegioHelden/loci-pypi-test/pull/27) (@lociii)
 - Publish locally [\#25](https://github.com/RegioHelden/loci-pypi-test/pull/25) (@lociii)
 
 ## [v0.4.1](https://github.com/RegioHelden/loci-pypi-test/tree/v0.4.1) (2025-03-26)
