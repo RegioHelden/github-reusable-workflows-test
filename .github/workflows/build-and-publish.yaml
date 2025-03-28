@@ -7,9 +7,6 @@ on:
     tags:        
       - '**'   
 
-env:
-  DEPLOY_INDEX: testpypi
-
 jobs:
   # build package, make release on github and upload to pypi when a new tag is pushed
   # see https://github.com/RegioHelden/github-reusable-workflows/blob/main/.github/workflows/python-build-and-publish.yaml
@@ -18,8 +15,6 @@ jobs:
     uses: regiohelden/github-reusable-workflows/.github/workflows/python-build-and-publish.yaml@main
     permissions:
       id-token: write
-    with:
-      deploy-index: ${{ env.DEPLOY_INDEX }}
 
   publish-pypi:
     name: Publish on PyPI
@@ -50,9 +45,4 @@ jobs:
           path: dist/
 
       - name: Publish to alternative index
-        if: ${{ env.DEPLOY_INDEX != '' && env.DEPLOY_INDEX != 'pypi' }}
-        run: uv publish --trusted-publishing always --index ${{ env.DEPLOY_INDEX }}
-
-      - name: Publish
-        if: ${{ env.DEPLOY_INDEX == '' || env.DEPLOY_INDEX == 'pypi' }}
-        run: uv publish --trusted-publishing always
+        run: uv publish --trusted-publishing always --index testpypi
