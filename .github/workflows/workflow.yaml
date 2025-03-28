@@ -21,4 +21,3 @@ jobs:
     uses: RegioHelden/github-reusable-workflows/.github/workflows/python-ruff.yaml@main
     with:
       ruff-version: "0.11.0"
-      python-version: "3.12"
