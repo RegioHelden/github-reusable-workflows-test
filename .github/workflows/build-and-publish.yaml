@@ -33,6 +33,10 @@ jobs:
         with:
           python-version: "3.12"
 
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
       - name: Install the latest version of uv
         uses: astral-sh/setup-uv@v5
 
@@ -43,4 +47,4 @@ jobs:
           path: dist/
 
       - name: Publish
-        run: uv publish --trusted-publishing always
+        run: uv publish --trusted-publishing always --index testpypi
