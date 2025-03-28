@@ -1,11 +1,21 @@
 # Changelog
 
+## [v0.5.0](https://github.com/RegioHelden/loci-pypi-test/tree/v0.5.0) (2025-03-28)
+
+[Full Changelog](https://github.com/RegioHelden/loci-pypi-test/compare/v0.4.1...v0.5.0)
+
+**Implemented enhancements:**
+
+- Publish locally [\#25](https://github.com/RegioHelden/loci-pypi-test/pull/25) (@lociii)
+
 ## [v0.4.1](https://github.com/RegioHelden/loci-pypi-test/tree/v0.4.1) (2025-03-26)
 
 [Full Changelog](https://github.com/RegioHelden/loci-pypi-test/compare/v0.4.0...v0.4.1)
 
 **Fixed bugs:**
 
+- Fix variables job [\#24](https://github.com/RegioHelden/loci-pypi-test/pull/24) (@lociii)
+- Set runs on for publish command [\#23](https://github.com/RegioHelden/loci-pypi-test/pull/23) (@lociii)
 - Forward environment variables to publish action [\#21](https://github.com/RegioHelden/loci-pypi-test/pull/21) (@lociii)
 
 ## [v0.4.0](https://github.com/RegioHelden/loci-pypi-test/tree/v0.4.0) (2025-03-26)
