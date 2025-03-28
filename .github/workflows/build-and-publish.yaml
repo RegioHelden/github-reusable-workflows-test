@@ -12,9 +12,10 @@ jobs:
   # see https://github.com/RegioHelden/github-reusable-workflows/blob/main/.github/workflows/python-build-and-publish.yaml
   build-and-release:
     name: Build and publish
-    uses: regiohelden/github-reusable-workflows/.github/workflows/python-build-and-publish.yaml@main
     permissions:
+      contents: write
       id-token: write
+    uses: regiohelden/github-reusable-workflows/.github/workflows/python-build-and-publish.yaml@main
 
   publish-pypi:
     name: Publish on PyPI

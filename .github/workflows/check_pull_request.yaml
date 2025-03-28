@@ -12,4 +12,7 @@ jobs:
   # see https://github.com/RegioHelden/github-reusable-workflows/blob/main/.github/workflows/check-pull-request.yaml
   check-pull-request:
     name: Check pull request
+    permissions:
+      issues: write
+      pull-requests: write
     uses: RegioHelden/github-reusable-workflows/.github/workflows/check-pull-request.yaml@main
