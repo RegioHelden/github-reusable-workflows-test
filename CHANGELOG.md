@@ -1,5 +1,13 @@
 # Changelog
 
+## [v0.7.0](https://github.com/RegioHelden/loci-pypi-test/tree/v0.7.0) (2025-03-28)
+
+[Full Changelog](https://github.com/RegioHelden/loci-pypi-test/compare/v0.6.0...v0.7.0)
+
+**Implemented enhancements:**
+
+- Move pypi publish back to local repo [\#36](https://github.com/RegioHelden/loci-pypi-test/pull/36) (@lociii)
+
 ## [v0.6.0](https://github.com/RegioHelden/loci-pypi-test/tree/v0.6.0) (2025-03-28)
 
 [Full Changelog](https://github.com/RegioHelden/loci-pypi-test/compare/v0.5.0...v0.6.0)

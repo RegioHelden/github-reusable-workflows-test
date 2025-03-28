@@ -1,6 +1,6 @@
 [project]
 name = "loci-pypi-test"
-version = "0.6.0"
+version = "0.7.0"
 license = "MIT"
 requires-python = ">=3.9"
 description = "Just a test package to validate our GitHub actions"
