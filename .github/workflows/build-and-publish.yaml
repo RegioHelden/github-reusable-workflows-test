@@ -16,34 +16,5 @@ jobs:
       contents: write
       id-token: write
     uses: regiohelden/github-reusable-workflows/.github/workflows/python-build-and-publish.yaml@main
-
-  publish-pypi:
-    name: Publish on PyPI
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      id-token: write
-    needs:
-      - build-and-release
-    steps:
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: ${{ inputs.python-version }}
-
-      # required so that uv can read index information from pyproject.toml
-      - uses: actions/checkout@v4
-        with:
-          persist-credentials: false
-
-      - name: Install the latest version of uv
-        uses: astral-sh/setup-uv@v5
-
-      - name: Download the distribution packages
-        uses: actions/download-artifact@v4
-        with:
-          name: python-package-distributions
-          path: dist/
-
-      - name: Publish to alternative index
-        run: uv publish --trusted-publishing always --index testpypi
+    with:
+      deploy-index: testpypi
